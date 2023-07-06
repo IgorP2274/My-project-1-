@@ -11,8 +11,14 @@ public class PressPlate : MonoBehaviour
     [SerializeField] private UnityEvent _leftPlate;
 
     private void OnTriggerEnter(Collider collision)
-        =>_steppedOnPlate?.Invoke();
+    {
+        if (collision.TryGetComponent<Player>(out Player player))
+            _steppedOnPlate?.Invoke();
+    }
 
     private void OnTriggerExit(Collider collision)
-        => _leftPlate?.Invoke();
+    {
+        if (collision.TryGetComponent<Player>(out Player player))
+            _leftPlate?.Invoke();
+    }
 }
