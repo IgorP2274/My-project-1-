@@ -110,5 +110,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e27dc1feb8e29a4d8eea8c898cd7abf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 1531687910176712187, guid: 7782fbef04462c747850d85d519f715a, type: 3}
-  RespawnTime: 2
+  _enemy: {fileID: 1531687910176712187, guid: 7782fbef04462c747850d85d519f715a, type: 3}
