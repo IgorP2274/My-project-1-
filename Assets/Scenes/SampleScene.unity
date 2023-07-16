@@ -819,6 +819,14 @@ PrefabInstance:
       propertyPath: RespawnDelay
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8658282195839422742, guid: 7058d5791152a4f47b52e1a8991085a0, type: 3}
+      propertyPath: _respawnTime
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658282195839422742, guid: 7058d5791152a4f47b52e1a8991085a0, type: 3}
+      propertyPath: _respawnDelay
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7058d5791152a4f47b52e1a8991085a0, type: 3}
 --- !u!1 &673262880
@@ -1051,6 +1059,7 @@ GameObject:
   - component: {fileID: 771362163}
   - component: {fileID: 771362167}
   - component: {fileID: 771362168}
+  - component: {fileID: 771362169}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1149,7 +1158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1feef70f28a62eb4689aba061ba08328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
 --- !u!54 &771362168
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1166,6 +1174,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &771362169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771362161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb9e46647c0da54fb2b347eee655587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 3
 --- !u!1 &863726903
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,6 +1431,14 @@ PrefabInstance:
       propertyPath: RespawnDelay
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8658282195839422742, guid: 7058d5791152a4f47b52e1a8991085a0, type: 3}
+      propertyPath: _respawnTime
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658282195839422742, guid: 7058d5791152a4f47b52e1a8991085a0, type: 3}
+      propertyPath: _respawnDelay
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7058d5791152a4f47b52e1a8991085a0, type: 3}
 --- !u!114 &2001922511 stripped
@@ -1577,6 +1606,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8658282195839422742, guid: 7058d5791152a4f47b52e1a8991085a0, type: 3}
       propertyPath: RespawnTime
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658282195839422742, guid: 7058d5791152a4f47b52e1a8991085a0, type: 3}
+      propertyPath: _respawnTime
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []

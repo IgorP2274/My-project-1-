@@ -1,45 +1,48 @@
 using System.Collections;
 using UnityEngine;
 
-public class buzzerSoundSwitch : MonoBehaviour
+public class BuzzerSoundSwitch : MonoBehaviour
 {
     [SerializeField] private AudioSource audioSource;
 
     private float _volume;
     private float _volumeChangeSpeed;
     private float _endVolume;
+    private float _maxVolume;
+    private float _minVolume;
 
-    void Start()
+    public void BuzzerSoundOn()
+    {
+        audioSource.Play();
+        BuzzerSound(_minVolume, _maxVolume);
+    }
+
+    public void BuzzerSoundOff()
+        => BuzzerSound(_maxVolume, _minVolume);
+
+    private void Start()
     {
         _endVolume = 0;
         _volume = 0;
         _volumeChangeSpeed = 0.1f;
+        _maxVolume = 1;
+        _minVolume = 0;
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void BuzzerSoundOn() 
+    private void BuzzerSound(float oldTarget, float newTarget)
     {
-        if (_endVolume == 0)
+        if (_endVolume == oldTarget)
         {
-            _endVolume = 1f;
-            audioSource.Play();
+            _endVolume = newTarget;
             StartCoroutine(SetSoundLevel());
         }
     }
 
-    public void BuzzerSoundOff()
-    {
-        if (_endVolume == 1) 
-        {
-            _endVolume = 0f;
-            StartCoroutine(SetSoundLevel());
-        }
-    }
-
-    public IEnumerator SetSoundLevel() 
+    private IEnumerator SetSoundLevel() 
     {
         _volume = audioSource.volume;
-
+        
         while (_volume != _endVolume)
         {
             _volume = Mathf.MoveTowards(_volume, _endVolume, _volumeChangeSpeed * Time.deltaTime);

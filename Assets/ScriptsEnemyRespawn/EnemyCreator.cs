@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class EnemyCreator : MonoBehaviour
@@ -8,14 +6,10 @@ public class EnemyCreator : MonoBehaviour
     [SerializeField] private GameObject _enemy;
     [SerializeField] private int _respawnTime;
     [SerializeField] private int _respawnDelay;
+
     private bool _isInactive;
     private int _highOfRespawn;
-
-    private void Start()
-    {
-        _isInactive = true;
-        _highOfRespawn = 1;
-    }
+    private WaitForSeconds respawnTime;
 
     public void StartCreation()
     {
@@ -33,7 +27,14 @@ public class EnemyCreator : MonoBehaviour
         {
             Vector3 vector3 = transform.position + new Vector3(0, _highOfRespawn, 0);
             Instantiate(_enemy, vector3, Quaternion.identity);
-            yield return new WaitForSeconds(_respawnTime);
+            yield return respawnTime;
         }
+    }
+
+    private void Start()
+    {
+        _isInactive = true;
+        _highOfRespawn = 1;
+        respawnTime = new WaitForSeconds(_respawnTime);
     }
 }
