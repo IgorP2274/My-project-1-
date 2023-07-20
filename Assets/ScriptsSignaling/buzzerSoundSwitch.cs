@@ -10,6 +10,7 @@ public class BuzzerSoundSwitch : MonoBehaviour
     private float _endVolume;
     private float _maxVolume;
     private float _minVolume;
+    private Coroutine _setSoundLevel;
 
     public void BuzzerSoundOn()
     {
@@ -35,7 +36,9 @@ public class BuzzerSoundSwitch : MonoBehaviour
         if (_endVolume == oldTarget)
         {
             _endVolume = newTarget;
-            StartCoroutine(SetSoundLevel());
+
+            if (_setSoundLevel == null)
+                _setSoundLevel = StartCoroutine(SetSoundLevel());
         }
     }
 

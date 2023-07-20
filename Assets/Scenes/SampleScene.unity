@@ -812,6 +812,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8658282195839422742, guid: 7058d5791152a4f47b52e1a8991085a0, type: 3}
+      propertyPath: _enemy
+      value: 
+      objectReference: {fileID: 6833544133588869656, guid: 7782fbef04462c747850d85d519f715a, type: 3}
+    - target: {fileID: 8658282195839422742, guid: 7058d5791152a4f47b52e1a8991085a0, type: 3}
       propertyPath: RespawnTime
       value: 6
       objectReference: {fileID: 0}
@@ -1424,6 +1428,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8658282195839422742, guid: 7058d5791152a4f47b52e1a8991085a0, type: 3}
+      propertyPath: _enemy
+      value: 
+      objectReference: {fileID: 6833544133588869656, guid: 7782fbef04462c747850d85d519f715a, type: 3}
+    - target: {fileID: 8658282195839422742, guid: 7058d5791152a4f47b52e1a8991085a0, type: 3}
       propertyPath: RespawnTime
       value: 6
       objectReference: {fileID: 0}
@@ -1604,6 +1612,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8658282195839422742, guid: 7058d5791152a4f47b52e1a8991085a0, type: 3}
+      propertyPath: _enemy
+      value: 
+      objectReference: {fileID: 6833544133588869656, guid: 7782fbef04462c747850d85d519f715a, type: 3}
     - target: {fileID: 8658282195839422742, guid: 7058d5791152a4f47b52e1a8991085a0, type: 3}
       propertyPath: RespawnTime
       value: 6
