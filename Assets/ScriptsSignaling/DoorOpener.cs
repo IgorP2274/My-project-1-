@@ -11,25 +11,11 @@ public class DoorOpener : MonoBehaviour
     private Coroutine _close;
     private Coroutine _open;
 
-    public void Catch()
-    {
-        _targetPosition = new Vector3(0, _closeStateHeihgt, 3);
+    public void Catch() =>
+        GetDoorState(_closeStateHeihgt, _open, _close);
 
-        if (_open != null)
-            StopCoroutine(_open);
-
-        _close = StartCoroutine(MoveDoor());
-    }
-
-    public void SetFree()
-    {
-        _targetPosition = new Vector3(0, _openStateHeihgt, 3);
-
-        if (_close != null)
-            StopCoroutine(_close);
-
-        _open = StartCoroutine(MoveDoor());
-    }
+    public void SetFree() =>
+        GetDoorState(_openStateHeihgt, _close, _open);
 
     private IEnumerator MoveDoor()
     {
@@ -38,5 +24,15 @@ public class DoorOpener : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, _targetPosition, _speed * Time.deltaTime);
             yield return null;
         }
+    }
+
+    public void GetDoorState(int stateHeihgt, Coroutine end, Coroutine start)
+    {
+        _targetPosition = new Vector3(0, stateHeihgt, 3);
+
+        if (end != null)
+            StopCoroutine(end);
+
+        start = StartCoroutine(MoveDoor());
     }
 }
